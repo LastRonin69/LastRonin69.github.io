@@ -43,3 +43,14 @@ tbody tr:first-child {
     }
 }
 
+
+@media only screen {
+
+    tbody.tabella3 tr:not(:first-child) {
+        opacity: 1;
+    }
+
+    tbody.tabella3:hover tr {
+        opacity: 1;
+    }
+}
