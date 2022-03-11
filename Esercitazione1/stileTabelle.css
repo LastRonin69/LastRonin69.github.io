@@ -1,5 +1,9 @@
+table {
+    margin: auto;
+}
 table, td, th {
    border: thin solid black; 
+   width: 45%;
 }
 
 thead tr {
@@ -41,7 +45,7 @@ tbody tr:first-child {
     }
 
     tbody.tabella2:hover tr {
-        display: block;
+        display: table-row;
     }
 }
 
