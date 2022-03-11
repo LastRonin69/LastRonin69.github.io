@@ -3,4 +3,40 @@ color: white; z-index:-1;
 }
 
 nav { 
+    width: 20%;
+    height: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    text-align: center;
+    border: solid;
+    border-radius: 10px;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    margin: 2px;
+    font-size: large;
+    
+}
+
+a:hover {
+    font-size: larger;
+}
+
+a:visited {
+    color: white;
+}
+
+summary {
+    font-size: x-large;
+}
+
+p {
+    text-align: center;
+    width: 50%;
+    margin: auto;
 }

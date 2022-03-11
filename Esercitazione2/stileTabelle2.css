@@ -1,0 +1,59 @@
+table, td, th {
+   border: thin solid black; 
+}
+
+thead tr {
+    background-color: chartreuse;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: lightgrey;
+}
+
+table tr td:last-child {
+    text-align: right;
+    padding-left: 2em;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+tbody tr:first-child {
+    background-color: lightcoral;
+}
+
+/*
+@media only screen {
+
+    tbody tr:not(:first-child) {
+        visibility: hidden;
+    }
+
+    tbody:hover tr {
+        visibility: visible;
+    }
+}
+*/
+
+@media only screen {
+
+    tbody.tabella2 tr:not(:first-child) {
+        display: none;
+    }
+
+    tbody.tabella2:hover tr {
+        display: block;
+    }
+}
+
+
+
+@media only screen {
+
+    tbody.tabella3 tr:not(:first-child) {
+        opacity: 0.4;
+    }
+
+    tbody.tabella3:hover tr {
+        opacity: 1;
+    }
+}
