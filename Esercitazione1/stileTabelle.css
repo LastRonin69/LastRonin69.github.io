@@ -21,6 +21,7 @@ tbody tr:first-child {
     background-color: lightcoral;
 }
 
+/*
 @media only screen {
 
     tbody tr:not(:first-child) {
@@ -31,6 +32,7 @@ tbody tr:first-child {
         visibility: visible;
     }
 }
+*/
 
 @media only screen {
 
@@ -44,10 +46,11 @@ tbody tr:first-child {
 }
 
 
+
 @media only screen {
 
     tbody.tabella3 tr:not(:first-child) {
-        opacity: 1;
+        opacity: 0.4;
     }
 
     tbody.tabella3:hover tr {
