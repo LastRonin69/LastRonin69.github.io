@@ -1,13 +1,63 @@
+nav { 
+    width: 20%;
+    height: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    text-align: center;
+    border: solid;
+    border-radius: 10px;
+    background-color: white;
+    color: rgb(116, 113, 113);
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: rgb(116, 113, 113);
+    margin: 2px;
+    font-size: large;
+    
+}
+
+a:hover {
+    font-size: larger;
+}
+
+a:visited {
+    color: rgb(116, 113, 113);
+}
+
+summary {
+    font-size: x-large;
+}
+
+
+/* fino a qui i css sono serviti per il menù */
+
+table {
+    margin: auto;
+}
+
 table, td, th {
    border: thin solid black; 
 }
 
-thead tr {
+thead tr, thead + tbody tr td {
     background-color: chartreuse;
 }
 
-tbody tr:nth-child(odd) {
+tbody table tr:nth-child(odd) {
     background-color: lightgrey;
+}
+
+tbody table tr:nth-child(even) {
+    background-color: white;
+}
+
+table table td {
+    width: 100%;
 }
 
 table tr td:last-child {
@@ -21,8 +71,7 @@ tbody tr:first-child {
     background-color: lightcoral;
 }
 
-/*
-@media only screen {
+/* @media only screen {
 
     tbody tr:not(:first-child) {
         visibility: hidden;
@@ -34,7 +83,7 @@ tbody tr:first-child {
 }
 */
 
-@media only screen {
+/* @media only screen {
 
     tbody.tabella2 tr:not(:first-child) {
         display: none;
@@ -43,11 +92,9 @@ tbody tr:first-child {
     tbody.tabella2:hover tr {
         display: block;
     }
-}
+} */
 
-
-
-@media only screen {
+/* @media only screen {
 
     tbody.tabella3 tr:not(:first-child) {
         opacity: 0.4;
@@ -56,4 +103,4 @@ tbody tr:first-child {
     tbody.tabella3:hover tr {
         opacity: 1;
     }
-}
+}  */
