@@ -76,6 +76,10 @@ input#tutte:checked ~ table tr {
     display: table-row;
 }
 
+aside {
+    border: 1px, solid, black;
+}
+
 label {
     margin: 20px;
     cursor: pointer;
