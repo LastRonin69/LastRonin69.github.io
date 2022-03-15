@@ -20,7 +20,6 @@ a {
     font-size: large;
     
 }
-
 a:hover {
     font-size: larger;
 }
@@ -34,31 +33,24 @@ summary {
     cursor: pointer;
 }
 
-
 /* fino a qui i css sono serviti per il menù */
 
 table {
     margin: auto;
 }
-
 table, td, th {
    border: thin solid black; 
+   width: 45%;
 }
+
 
 thead tr, thead + tbody tr td {
     background-color: chartreuse;
 }
 
-tbody table tr:nth-child(odd) {
+
+tbody tr:nth-child(odd) {
     background-color: lightgrey;
-}
-
-tbody table tr:nth-child(even) {
-    background-color: white;
-}
-
-table table td {
-    width: 100%;
 }
 
 table tr td:last-child {
@@ -72,42 +64,9 @@ tbody tr:first-child {
     background-color: lightcoral;
 }
 
-/* @media only screen {
-
-    tbody tr:not(:first-child) {
-        visibility: hidden;
-    }
-
-    tbody:hover tr {
-        visibility: visible;
-    }
-}
-*/
-
-/* @media only screen {
-
-    tbody.tabella2 tr:not(:first-child) {
-        display: none;
-    }
-
-    tbody.tabella2:hover tr {
-        display: block;
-    }
-} */
-
-/* @media only screen {
-
-    tbody.tabella3 tr:not(:first-child) {
-        opacity: 0.4;
-    }
-
-    tbody.tabella3:hover tr {
-        opacity: 1;
-    }
-}  */
 
 
-/* Proverò ad aggiungere qui la parte che dovrebbe andare nel file css stileRigheChecked */
+
 
 input#soloMacro:checked ~ table tr:not(:first-child) {
     display: none;
@@ -115,4 +74,14 @@ input#soloMacro:checked ~ table tr:not(:first-child) {
 
 input#tutte:checked ~ table tr {
     display: table-row;
+}
+
+label {
+    margin: 20px;
+    cursor: pointer;
+}
+
+input {
+    margin: 10px;
+    cursor: pointer;
 }
