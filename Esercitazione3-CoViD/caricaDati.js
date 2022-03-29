@@ -9,7 +9,7 @@ d3.select("body")
 .text(function(d) { return d });
 
 
-d3.csv("datiCovid.csv", function(datiCaricati){
+d3.csv("https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni-latest.csv", function(datiCaricati){
     console.log(datiCaricati);
 
     d3.select("table")
