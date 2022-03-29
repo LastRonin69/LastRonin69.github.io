@@ -12,28 +12,7 @@ nav {
     color: rgb(116, 113, 113);
 }
 
-a {
-    display: block;
-    text-decoration: none;
-    color: rgb(116, 113, 113);
-    margin: 2px;
-    font-size: large;
-    
-}
-a:hover {
-    font-size: larger;
-}
 
-a:visited {
-    color: rgb(116, 113, 113);
-}
-
-summary {
-    font-size: x-large;
-    cursor: pointer;
-}
-
-/* fino a qui i css sono serviti per il menù */
 
 table {
     margin: auto;
@@ -43,11 +22,9 @@ table, td, th {
    width: 45%;
 }
 
-
-thead tr, thead + tbody tr:first-child {
+thead tr {
     background-color: chartreuse;
 }
-
 
 tbody tr:nth-child(odd) {
     background-color: lightgrey;
@@ -64,28 +41,9 @@ tbody tr:first-child {
     background-color: lightcoral;
 }
 
+tbody tr.datoClasse3 {
+    font-size: large;
+    background-color: black;
+    color: grey;
 
-
-
-
-input#soloMacro:checked ~ table tr:not(:first-child) {
-    display: none;
-}
-
-input#tutte:checked ~ table tr {
-    display: table-row;
-}
-
-aside {
-    border: 1px, solid, black;
-}
-
-label {
-    margin: 20px;
-    cursor: pointer;
-}
-
-input {
-    margin: 10px;
-    cursor: pointer;
 }

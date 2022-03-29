@@ -45,7 +45,7 @@ table, td, th {
    border: thin solid black; 
 }
 
-thead tr, thead + tbody tr td {
+thead tr, thead + tbody tr:first-child {
     background-color: chartreuse;
 }
 

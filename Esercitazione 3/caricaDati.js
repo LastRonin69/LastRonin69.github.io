@@ -1,0 +1,32 @@
+d3.select("body")
+.append("table")
+.append("thead")
+.append("tr")
+.selectAll("th")
+.data(["Territorio", "Popolazione"])
+.enter()
+.append("th")
+.text(function(d) { return d });
+
+
+d3.csv("Istat-popolazioneResidentePerRegione2021.csv", function(datiCaricati){
+    console.log(datiCaricati);
+
+    d3.select("table")
+       .append("tbody")
+       .selectAll("tr")
+       .data(datiCaricati)
+       .enter()
+       .append("tr")
+       .attr("class", function(d){
+           return "datoClasse" + d.ITTER107.length
+       })
+       .selectAll("td")
+       .data(function(d){
+           return[d.Territorio, Number(d.Value).toLocaleString()]
+       })
+       .enter()
+       .append("td")
+       .text(function(d){return d })
+});
+
