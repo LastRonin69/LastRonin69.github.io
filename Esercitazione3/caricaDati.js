@@ -19,8 +19,21 @@ d3.csv("Istat-popolazioneResidentePerRegione2021.csv", function(datiCaricati){
        .enter()
        .append("tr")
        .attr("class", function(d){
-           return "datoClasse" + d.ITTER107.length
-       })
+
+ /* scegliere se togliere il commento e attivare questa seconda scelta */
+        
+        let classe = "";
+        if (d.ITTER107.length == 4)
+        classe = "regione"
+        else if (d.ITTER107.length == 3)
+        classe = "macroRegione"
+        else
+        classe = "italia"
+        return classe 
+
+
+         /*  return "datoClasse" + d.ITTER107.length */
+       }) 
        .selectAll("td")
        .data(function(d){
            return[d.Territorio, Number(d.Value).toLocaleString()]

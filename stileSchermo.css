@@ -1,6 +1,6 @@
 body { background-color: rgb(116, 113, 113) ;
 color: white; 
-z-index:-1;
+margin-bottom: 50px;
 }
 
 nav { 
@@ -43,4 +43,11 @@ p {
     width: 50%;
     margin: auto;
     font-size: large;
+}
+
+
+footer {
+    position: fixed;
+    border-top: solid;
+    width: 100%;
 }

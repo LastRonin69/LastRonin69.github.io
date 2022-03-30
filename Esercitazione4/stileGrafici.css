@@ -1,0 +1,20 @@
+div {
+    display: inline-block;
+    background-color: orange;
+    border: thin solid black;
+}
+
+figure {
+    height: 40vh; /* 40% dell'altezza del viewport */
+    width: 40%;
+    padding: 1%;
+    border: thin solid red;
+    position: relative;
+}
+
+figcaption {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 70%;
+}

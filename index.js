@@ -1,0 +1,2 @@
+let ultimaModifica = document.lastModified
+

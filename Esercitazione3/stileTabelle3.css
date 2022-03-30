@@ -47,3 +47,10 @@ tbody tr.datoClasse3 {
     color: grey;
 
 }
+
+
+tbody tr.macroRegione {
+    font-size: large;
+    background-color: black;
+    color: grey;
+}

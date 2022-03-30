@@ -20,10 +20,11 @@ d3.csv("https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/d
        .append("tr")
        .selectAll("td")
        .data(function(d){
-           return[d.denominazione_regione, Number(d.totale_casi).toLocaleString()]
-       })
+        return[d.denominazione_regione, Number(d.totale_casi).toLocaleString()]})  
        .enter()
        .append("td")
        .text(function(d){return d })
 });
+
+
 
