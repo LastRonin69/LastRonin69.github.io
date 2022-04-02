@@ -1,0 +1,30 @@
+nav { 
+    width: 20%;
+    height: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    text-align: center;
+    border: solid;
+    border-radius: 10px;
+    background-color: white;
+    color: rgb(116, 113, 113);
+}
+/* fino a qui si trattava dei css del menù*/
+
+table {
+    width: 100%;
+}
+table tr td:first-child {
+    text-align: right;
+    width: 20%;
+}
+
+div {
+    background-color: orange;
+    height: 1.1em;
+    border-left: thin solid orange;
+    overflow: visible;
+}
+
