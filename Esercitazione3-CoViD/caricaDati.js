@@ -1,6 +1,10 @@
 d3.select("body")
 .append("table")
 .append("thead")
+
+
+
+
 .append("tr")
 .selectAll("th")
 .data(["Territorio", "Casi"])

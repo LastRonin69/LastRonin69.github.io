@@ -4,8 +4,8 @@ d3.csv("https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/d
     const larghezzaBarre = Math.floor(100 / dati.length);
     /* il valore massimo è il totale dell'Italia */
     const valoreMassimo = Number(dati[8].totale_casi);
-    document.getElementById("aggiornamento").innerHTML =
-        dati[0]["Tipo di indicatore demografico"] + " " + dati[0].TIME;
+    let data = new Date();
+    document.getElementById("aggiornamento").innerHTML = "aggiornati il " + data.getDate() + "/" + data.getMonth();
     d3.select("figure")
         .selectAll("div")
         .data(dati)
