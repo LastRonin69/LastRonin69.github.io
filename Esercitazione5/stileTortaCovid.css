@@ -1,0 +1,22 @@
+ /* tag svg: proprietà diverse da html  */
+ svg path {
+    stroke: white;
+    /* colore del contorno dei settori (se bianco, separa) */
+    stroke-width: 2px;
+    /* larghezza contorno dei settori */
+    opacity: 0.6;
+    /* per far vedere la didascalia */
+}
+
+svg text {
+    stroke: black;
+    visibility: hidden;
+}
+
+svg text:hover {
+    visibility: visible;
+}
+
+svg path:hover~text {
+    visibility: visible;
+}

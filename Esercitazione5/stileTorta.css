@@ -1,0 +1,56 @@
+/* tag svg: proprietà diverse da html */
+svg path {
+    stroke: white;
+    /* colore del contorno dei settori (se bianco, separa) */
+    stroke-width: 2px;
+    /* larghezza contorno dei settori */
+}
+
+svg text {
+    stroke: white;
+
+}
+
+/* esercizio 2 punto a
+g:nth-child(1) {
+    fill: aqua;
+}
+
+g:nth-child(2) {
+    fill: red;
+}
+
+g:nth-child(3) {
+    fill: burlywood;
+}
+
+g:nth-child(4) {
+    fill: cadetblue;
+}
+
+g:nth-child(5) {
+    fill: palevioletred;
+}
+*/
+
+/* esercizio 2 punto b
+.Nord-ovest {
+    fill: aqua;
+}
+
+.Nord-est {
+    fill: red;
+}
+
+.Centro {
+    fill: burlywood;
+}
+
+.Sud {
+    fill: cadetblue;
+}
+
+.Isole {
+    fill: palevioletred;
+}
+*/
