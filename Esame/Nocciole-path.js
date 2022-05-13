@@ -118,7 +118,7 @@ let asseOrdinate = d3.axisLeft()
 .scale(scalaSuperficie);
 
 svg.append("g")
-.attr("transform",`translate(${grafico.larghezza}, 0)`)
+.attr("transform",`translate(${grafico.larghezza},0)`)
 .call(asseOrdinate);
 
 
