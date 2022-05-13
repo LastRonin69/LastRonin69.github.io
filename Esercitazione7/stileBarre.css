@@ -1,0 +1,19 @@
+rect.Italia {
+    fill: lime;
+}
+
+rect.macroRegione {
+    fill: orange;
+}
+
+rect.regione {
+    fill: aqua;
+}
+
+header {
+    /* posiziona la descrizione nella parte vuota, in basso a destra */
+    position: absolute;
+    bottom: 20%;
+    right: 0px;
+    width: 50%
+}
