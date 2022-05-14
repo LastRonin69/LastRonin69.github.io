@@ -14,6 +14,7 @@ let rowConverter = function (d) {
     };
 };
 
+//spazioGrafico
 
 
 d3.csv("ReportNocciola.csv", function (dati) {
@@ -48,12 +49,14 @@ d3.csv("ReportNocciola.csv", function (dati) {
     const minimoQuintali = d3.min(quintali, function (d) { return Number(d.Value) });
     console.log(minimoQuintali);
 
+let spazioLegenda = d3.max(superficie, function (d) { return d.Value.length * 8 }) ;
+console.log(spazioLegenda);
 
     // scala temporale
     scalaTemporale = d3.scaleTime()
         .domain([
-            d3.min(superficie, function (d) { return d.TIME; }),
-            d3.max(superficie, function (d) { return d.TIME; })
+            d3.min(superficie, function (d) { return new Date(d.TIME) }),
+            d3.max(superficie, function (d) { return new Date(d.TIME) })
         ])
         .range([0, grafico.larghezza]);
 
@@ -68,21 +71,21 @@ d3.csv("ReportNocciola.csv", function (dati) {
 
     // definire linea superficie
     let lineaSuperficie = d3.line()
-        .x(function (d) { return scalaTemporale(d.TIME) })
+        .x(function (d) { return scalaTemporale(new Date(d.TIME)) })
         .y(function (d) { return scalaSuperficie(d.Value) });
 
     // scala quintali
     scalaQuintali = d3.scaleLinear()
         .domain([d3.min(quintali, function (d) {
-            return `${d.Value}`;
+            return d.Value
         }), d3.max(quintali, function (d) {
-            return `${d.Value}`;
+            return d.Value
         })])
         .range([grafico.altezza, 0]);
 
     // definire linea quintali (dividendo per 10 si convertono quintali in tonnellate)
     let lineaQuintali = d3.line()
-        .x(function (d) { return scalaTemporale(d.TIME) })
+        .x(function (d) { return scalaTemporale(new Date(d.TIME)) })
         .y(function (d) { return scalaQuintali(d.Value) / 10 });
 
 
@@ -95,12 +98,14 @@ d3.csv("ReportNocciola.csv", function (dati) {
     // creare linea superficie
     svg.append("path")
         .datum(superficie)
+        .attr("transform", `translate(${spazioLegenda},0)`)
         .attr("class", "primaLinea")
         .attr("d", lineaSuperficie);
 
     // creare linea quintali
     svg.append("path")
         .datum(quintali)
+        .attr("transform", `translate(${spazioLegenda},0)`)
         .attr("class", "secondaLinea")
         .attr("d", lineaQuintali);
 
@@ -110,17 +115,24 @@ let asseTemporale = d3.axisBottom()
 .scale(scalaTemporale);
 
 svg.append("g")
-.attr("transform",`translate(0, ${grafico.altezza})`)
+.attr("transform",`translate( ${spazioLegenda}, ${grafico.altezza})`)
 .attr("class", "asseTemporale")
 .call(asseTemporale);
 
+// assi delle ordinate
 let asseOrdinate = d3.axisLeft()
 .scale(scalaSuperficie);
 
 svg.append("g")
-.attr("transform",`translate(${grafico.larghezza},0)`)
+.attr("transform",`translate(${spazioLegenda},0)`)
 .call(asseOrdinate);
 
+let asseOrdinateQuintali = d3.axisRight()
+.scale(scalaQuintali);
+
+svg.append("g")
+.attr("transform",`translate(${grafico.larghezza + spazioLegenda},0)`)
+.call(asseOrdinateQuintali);
 
 
 });
