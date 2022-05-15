@@ -44,9 +44,9 @@ d3.csv("ReportNocciola.csv", function (dati) {
     console.log(massimoSuperficie);
     const minimoSuperficie = d3.min(superficie, function (d) { return Number(d.Value) });
     console.log(minimoSuperficie);
-    const massimoQuintali = d3.max(quintali, function (d) { return Number(d.Value) });
+    const massimoQuintali = d3.max(quintali, function (d) { return Number(d.Value)/10 });
     console.log(massimoQuintali);
-    const minimoQuintali = d3.min(quintali, function (d) { return Number(d.Value) });
+    const minimoQuintali = d3.min(quintali, function (d) { return Number(d.Value)/10 });
     console.log(minimoQuintali);
 
 let spazioLegenda = d3.max(superficie, function (d) { return d.Value.length * 8 }) ;
@@ -76,17 +76,13 @@ console.log(spazioLegenda);
 
     // scala quintali
     scalaQuintali = d3.scaleLinear()
-        .domain([d3.min(quintali, function (d) {
-            return d.Value
-        }), d3.max(quintali, function (d) {
-            return d.Value
-        })])
-        .range([grafico.altezza, 0]);
+        .domain([minimoQuintali, massimoQuintali])
+        .range([ grafico.altezza ,0]);
 
     // definire linea quintali (dividendo per 10 si convertono quintali in tonnellate)
     let lineaQuintali = d3.line()
         .x(function (d) { return scalaTemporale(new Date(d.TIME)) })
-        .y(function (d) { return scalaQuintali(d.Value) / 10 });
+        .y(function (d) { return scalaQuintali(d.Value/10) });
 
 
     // svg che conterrà le linee
@@ -121,14 +117,16 @@ svg.append("g")
 
 // assi delle ordinate
 let asseOrdinate = d3.axisLeft()
-.scale(scalaSuperficie);
+.scale(scalaSuperficie)
+.ticks(5);
 
 svg.append("g")
 .attr("transform",`translate(${spazioLegenda},0)`)
 .call(asseOrdinate);
 
 let asseOrdinateQuintali = d3.axisRight()
-.scale(scalaQuintali);
+.scale(scalaQuintali)
+.ticks(5);
 
 svg.append("g")
 .attr("transform",`translate(${grafico.larghezza + spazioLegenda},0)`)
