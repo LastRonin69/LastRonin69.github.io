@@ -11,11 +11,12 @@ function filtraRegioni(d) {
     return d.ITTER107.length == 4
 };
 
+
 /* carica i dati dei territori e memorizza nell'array popolazioneRegioni solo le regioni */
 d3.csv("Istat-popolazioneResidentePerRegione2021.csv",
     function (datiCaricati) {
         popolazioneRegioni = datiCaricati.filter(filtraRegioni);
-
+console.log(popolazioneRegioni);
         const minPopolazione = d3.min(popolazioneRegioni,
             function (d) { return Number(d.Value) });
 
@@ -86,6 +87,11 @@ d3.json("limits_IT_regions.geojson", function (datiJSON) {
             d3.selectAll("li." + this.className.baseVal)
                 .attr("style", "background-color: white")
         });
+
+        
+        regioni.select("path")
+        .append("text")
+        .text(function (d, i ){return popolazioneRegioni[i].Territorio});
 
     /* costruisce una lista con nomi e popolazione di ciascuna regione, e dà a ciascuna riga una classe
     = primi 5 caratteri del nome: */
