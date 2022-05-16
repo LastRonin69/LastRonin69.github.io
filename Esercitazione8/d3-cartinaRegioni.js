@@ -88,10 +88,11 @@ d3.json("limits_IT_regions.geojson", function (datiJSON) {
                 .attr("style", "background-color: white")
         });
 
-        
+// qui ho aggiunto il testo che volevamo        
         regioni.select("path")
         .append("text")
-        .text(function (d, i ){return popolazioneRegioni[i].Territorio});
+        .attr("transform", function (v) { return `translate(${path.centroid(v)})`})
+        .text(function (d ){return d.properties.reg_name});
 
     /* costruisce una lista con nomi e popolazione di ciascuna regione, e dà a ciascuna riga una classe
     = primi 5 caratteri del nome: */
