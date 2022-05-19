@@ -98,7 +98,7 @@ d3.csv("ReportNocciola.csv", function (dati) {
         .attr("class", "classeLineaSuperficie")
         .attr("d", lineaSuperficie);
 
-    // creare linea quintali
+    // creare linea tonnellate
     svg.append("path")
         .datum(quintali)
         .attr("transform", `translate(${spazioLegenda},0)`)
@@ -115,7 +115,7 @@ d3.csv("ReportNocciola.csv", function (dati) {
         .attr("class", "asseTemporale")
         .call(asseTemporale);
 
-    // asse delle ordinate sinistro, della superficie
+    // asse delle ordinate sinistro, della superficie in ettari
     let asseOrdinateSuperficie = d3.axisLeft()
         .scale(scalaSuperficie)
         .ticks(5);
