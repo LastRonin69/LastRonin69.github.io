@@ -22,4 +22,9 @@ path.classeLineaQuintali {
 
 .asseQuintali {
     stroke: brown;
+
+}
+
+.asseQuintali text {
+    stroke-width: 0.5;
 }
