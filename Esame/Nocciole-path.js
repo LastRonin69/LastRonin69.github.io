@@ -95,14 +95,14 @@ d3.csv("ReportNocciola.csv", function (dati) {
     svg.append("path")
         .datum(superficie)
         .attr("transform", `translate(${spazioLegenda},0)`)
-        .attr("class", "primaLinea")
+        .attr("class", "classeLineaSuperficie")
         .attr("d", lineaSuperficie);
 
     // creare linea quintali
     svg.append("path")
         .datum(quintali)
         .attr("transform", `translate(${spazioLegenda},0)`)
-        .attr("class", "secondaLinea")
+        .attr("class", "classeLineaQuintali")
         .attr("d", lineaTonnellate);
 
 
@@ -122,6 +122,7 @@ d3.csv("ReportNocciola.csv", function (dati) {
 
     svg.append("g")
         .attr("transform", `translate(${spazioLegenda},0)`)
+        .classed("asseSuperficie","true")
         .call(asseOrdinateSuperficie);
 
     // asse delle ordinate destro, della produzione in tonnellate
@@ -131,6 +132,7 @@ d3.csv("ReportNocciola.csv", function (dati) {
 
     svg.append("g")
         .attr("transform", `translate(${grafico.larghezza + spazioLegenda},0)`)
+        .classed("asseQuintali","true")
         .call(asseOrdinateQuintali);
 
 
@@ -140,11 +142,11 @@ d3.csv("ReportNocciola.csv", function (dati) {
 
 // azione interattiva che permette di disattivare una delle due linee o entrambe
 d3.select(`#quintali`).on("click", function () {
-    if (this.checked) d3.selectAll(`.secondaLinea`).attr(`style`, `display: block`)
-    else d3.selectAll(`.secondaLinea`).attr(`style`, `display: none`)
+    if (this.checked) d3.selectAll(`.classeLineaQuintali`).attr(`style`, `display: block`)
+    else d3.selectAll(`.classeLineaQuintali`).attr(`style`, `display: none`)
 });
 
 d3.select(`#superficie`).on("click", function () {
-    if (this.checked) d3.selectAll(`.primaLinea`).attr(`style`, `display: block`)
-    else d3.selectAll(`.primaLinea`).attr(`style`, `display: none`)
+    if (this.checked) d3.selectAll(`.classeLineaSuperficie`).attr(`style`, `display: block`)
+    else d3.selectAll(`.classeLineaSuperficie`).attr(`style`, `display: none`)
 });

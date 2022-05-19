@@ -1,17 +1,25 @@
-label {
+label#etichettaQuintali {
     float: right;
+    margin-right: 20%;
 }
 
-path.primaLinea {
+path.classeLineaSuperficie {
     fill: none;
     stroke: green;
     stroke-width: 3;
 }
 
-path.secondaLinea {
+path.classeLineaQuintali {
     fill: none;
     stroke: brown;
     stroke-width: 3;
 }
 
 
+.asseSuperficie {
+    stroke: green;
+}
+
+.asseQuintali {
+    stroke: brown;
+}
