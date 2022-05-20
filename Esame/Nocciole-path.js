@@ -4,15 +4,6 @@ const grafico = {
     larghezza: Math.round(window.innerWidth * 0.7)
 };
 
-let rowConverter = function (d) {
-    return {
-        //make a new Date object for each year
-        TIME: new Date(d.TIME).getFullYear(),
-        VALUE: Number(d.Value),
-        ITTER107: d.ITTER107,
-        TIPO_DATO5: d.TIPO_DATO5,
-    };
-};
 
 
 d3.csv("ReportNocciola.csv", function (dati) {
