@@ -1,8 +1,7 @@
 label#etichettaQuintali {
-    float: right;
-    margin-right: 20%;
+position: absolute;
+right: 20%;
 }
-
 path.classeLineaSuperficie {
     fill: none;
     stroke: green;

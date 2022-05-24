@@ -1,10 +1,7 @@
-
 const grafico = {
     altezza: Math.round(window.innerHeight * 0.8),
     larghezza: Math.round(window.innerWidth * 0.7)
 };
-
-
 
 d3.csv("ReportNocciola.csv", function (dati) {
     // carico i dati in una variabile
@@ -39,7 +36,7 @@ d3.csv("ReportNocciola.csv", function (dati) {
     const minimoQuintali = d3.min(quintali, function (d) { return Number(d.Value) / 10 });
     console.log(minimoQuintali);
 
-    // lo spazio occupato dalla legenda dell'asse sinistro, ogni carattere è grande circa 8px, dato trovato su internet
+    // lo spazio occupato dalla legenda dell'asse sinistro, ogni carattere è grande circa 8, dato trovato su internet
     let spazioLegenda = d3.max(superficie, function (d) { return d.Value.length * 8 });
     console.log(spazioLegenda);
 
